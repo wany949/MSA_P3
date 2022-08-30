@@ -1,0 +1,7 @@
+h1 {
+  font-size: 5rem;
+}
+
+body {
+  background-image: linear-gradient(to left, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 20%, rgb(228, 251, 255) 80%);
+}
