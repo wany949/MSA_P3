@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CakeIcon from '@mui/icons-material/Cake';
+import Divider from '@mui/material/Divider';
 
 export default function charCard(char: charDetailed) {
     const colour = switchColour(char.vision)
@@ -14,7 +15,7 @@ export default function charCard(char: charDetailed) {
         <React.Fragment>
 
             <Card sx={{
-                display: 'flex', flexDirection: 'row', border: 5, borderColor: colour, marginRight: '10px',
+                display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' }, border: 5, borderColor: colour, marginRight: '10px',
                 backgroundImage: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 40%, ${colour} 90%);`
             }}>
                 <Box sx={{ display: 'flex' }}>
@@ -70,7 +71,7 @@ export default function charCard(char: charDetailed) {
 
 
                         <Typography variant='body1' component='div'>
-                            <hr style={{ width: '50vw', margin: '0px' }} />
+                            <Divider sx={{ width: { xs: '100%', sm: '100%', md: '50vw' }, margin: '0px', bgcolor: 'black' }} />
                             <br />
                             <br />
                             {char.description}
