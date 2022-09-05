@@ -45,7 +45,7 @@ export default function charCard(char: charDetailed) {
                                     {char.rarity === 5 || char.rarity === 4 ? (
                                         <React.Fragment>
                                             <Typography sx={{ display: 'flex', alignItems: 'center' }}>
-                                                <Rating name="read-only" value={char.rarity} readOnly /> ▴ {char.weapon}
+                                                <Rating name="read-only" value={char.rarity} readOnly /> ● {char.weapon}
                                             </Typography>
                                         </React.Fragment>
 
