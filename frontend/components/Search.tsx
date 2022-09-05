@@ -24,7 +24,7 @@ export default function search(props: {
                     sx={{ width: 300, marginLeft: 'auto' }}
                     renderInput={(params) => <TextField {...params} label="Input Character Name" />}
                 />
-                <IconButton data-testid="searchButton" onClick={searchChar} sx={{ marginRight: 'auto' }}>
+                <IconButton aria-label="search" data-testid="searchButton" onClick={searchChar} sx={{ marginRight: 'auto' }}>
                     <SearchIcon></SearchIcon>
                 </IconButton>
             </Box>

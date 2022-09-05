@@ -26,6 +26,7 @@ export default function charCard(char: charDetailed) {
                         ""
                     ) : (
                         <CardMedia
+                            alt={char.name}
                             component='img'
                             height="800rem"
                             src={char.image}>

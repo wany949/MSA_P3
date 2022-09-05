@@ -16,6 +16,26 @@ export default {
             control: { type: 'radio' },
         },
     },
+    parameters: {
+        a11y: {
+            element: '#root',
+            config: {
+                rules: [
+                    {
+                        // Disable this test due to the way the grid is placed, it is not out of order visually.
+                        id: 'heading-order',
+                        enabled: false,
+                    },
+                    {
+                        // Disable colour contrast due to the gradient in the background
+                        id: 'color-contrast',
+                        enabled: false,
+                    },
+                ],
+            },
+        },
+    },
+
 } as ComponentMeta<typeof CharCard>;
 
 const GENSHIN_URL = "https://api.genshin.dev/"

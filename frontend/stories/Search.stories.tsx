@@ -6,7 +6,20 @@ import React from 'react';
 export default {
     title: "Components/Search",
     component: Search,
-
+    parameters: {
+        a11y: {
+            element: '#root',
+            config: {
+                rules: [
+                    {
+                        // Disable colour contrast due to MUI
+                        id: 'color-contrast',
+                        enabled: false,
+                    },
+                ],
+            },
+        },
+    },
 } as ComponentMeta<typeof Search>;
 
 const Template: ComponentStory<typeof Search> = (args) => <Search {...args} />;
