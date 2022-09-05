@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     <React.Fragment>
 
       <Grid container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' }, marginY: 'auto', minHeight: '100vh' }}>
-        <Grid item md={4} sx={{ marginY: '200px', height: '100%', textAlign: 'center' }}>
+        <Grid item xs={12} sm={12} md={4} sx={{ marginY: '200px', height: '100%', textAlign: 'center' }}>
           <Typography component="div">
             <h1>Genshin Impact</h1>
           </Typography>
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
 
         </Grid>
 
-        <Grid item md={8} sx={{ margin: 'auto', height: '100%' }}>
+        <Grid item xs={12} sm={12} md={8} sx={{ margin: 'auto', height: '100%' }}>
           {charInfo === undefined || charInfo === null ? (
             null
           ) : (

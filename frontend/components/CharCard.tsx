@@ -18,6 +18,7 @@ export default function charCard(char: charDetailed) {
                 display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' }, border: 5, borderColor: colour, marginRight: '10px',
                 backgroundImage: {
                     xs: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 80%, ${colour} 100%);`,
+                    sm: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 80%, ${colour} 100%);`,
                     md: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 40%, ${colour} 90%);`
                 }
             }}>
@@ -29,6 +30,7 @@ export default function charCard(char: charDetailed) {
                             alt={char.name}
                             component='img'
                             height="800rem"
+                            width="auto"
                             src={char.image}>
                         </CardMedia>
                     )}
