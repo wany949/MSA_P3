@@ -21,7 +21,6 @@ const Home: NextPage = () => {
         <Grid item md={4} sx={{ marginY: '200px', height: '100%', textAlign: 'center' }}>
           <Typography component="div">
             <h1>Genshin Impact</h1>
-            <p>Come search your favourite character here!</p>
           </Typography>
 
           <Search charName={charName} setCharName={setCharName} setCharInfo={setCharInfo} setCharImg={setCharImg}></Search>
