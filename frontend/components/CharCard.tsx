@@ -16,7 +16,10 @@ export default function charCard(char: charDetailed) {
 
             <Card sx={{
                 display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' }, border: 5, borderColor: colour, marginRight: '10px',
-                backgroundImage: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 40%, ${colour} 90%);`
+                backgroundImage: {
+                    xs: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 80%, ${colour} 100%);`,
+                    md: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 40%, ${colour} 90%);`
+                }
             }}>
                 <Box sx={{ display: 'flex' }}>
                     {char.name === undefined || char.image === "" ? (
@@ -33,7 +36,7 @@ export default function charCard(char: charDetailed) {
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent>
                         <Grid container>
-                            <Grid item md={8}>
+                            <Grid item xs={10} sm={10} md={8}>
                                 <Typography variant='h3'>
                                     {char.name}
                                     <img src={vision} alt={char.vision} style={{ height: "30px", marginLeft: '10px' }} />
@@ -56,7 +59,7 @@ export default function charCard(char: charDetailed) {
                                     {char.nation}
                                 </Typography>
                             </Grid>
-                            <Grid item md={4} sx={{ margin: 'auto auto 0 auto' }}>
+                            <Grid item xs={2} sm={2} md={4} sx={{ margin: 'auto auto 0 auto' }}>
                                 <Typography component='div' variant='subtitle1'>
                                     <CakeIcon></CakeIcon>
                                     <Typography variant='subtitle1' color='text.secondary'>
