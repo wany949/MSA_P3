@@ -33,8 +33,8 @@ export default function search(props: {
     )
 
     function searchChar() {
-        if (props.charName != null) {
-            const temp = props.charName.replace(/\s+/g, '-').toLowerCase();
+        if (props.charName != null && props.charName != "") {
+            const temp = props.charName.trim().replace(/\s+/g, '-').toLowerCase();
             axios.get(GENSHIN_URL + "characters/" + temp).then((response => {
                 props.setCharInfo(JSON.parse(JSON.stringify(response.data)))
                 console.log(JSON.parse(JSON.stringify(response.data)))
