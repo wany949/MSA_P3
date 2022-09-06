@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fPLIG4gavTd452XEW5kvpJ7SpN3iZtSUOrgXotndxYo=",
+  "Source": "GenshinFoodAPI",
+  "BasePath": "_content/GenshinFoodAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
