@@ -72,7 +72,11 @@ namespace Service.Service
             Food existingFood = _dbFood.FoodList.FirstOrDefault(f => f.Name == food.Name);
             if (existingFood != null)
             {
-                _dbFood.Update(existingFood);
+                existingFood.Type = food.Type;
+                existingFood.Rarity = food.Rarity;
+                existingFood.Effect = food.Effect;
+                existingFood.Description = food.Description;
+                _dbFood.SaveChanges();
             }
         }
     }

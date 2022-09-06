@@ -138,30 +138,38 @@ public class FoodController : ControllerBase
 
     // PUT actions
     [HttpPut("{name}")]
-    public IActionResult Update(string name, Food food)
+    public ActionResult<Food> Update(string name, Food food)
     {
         if (name != food.Name)
+        {
             return BadRequest();
-
+        }
+            
         var existingFood = _service.GetFoodByName(name);
         if (existingFood is null)
+        {
             return NotFound();
-
+        }
+            
         _service.UpdateFood(food);
 
-        return NoContent();
+        return Ok(food);
     }
 
     // DELETE actions
     [HttpDelete("{name}")]
-    public IActionResult Delete(string name)
+    public ActionResult<String> Delete(string name)
     {
         Food food = _service.GetFoodByName(name);
 
         if (food is null)
+        {
             return NotFound();
-        _service.RemoveFood(food);
+        }
 
-        return NoContent();
+        _service.RemoveFood(food);
+        string message = "Successfully deleted " + food.Name;
+
+        return message;
     }
 }
