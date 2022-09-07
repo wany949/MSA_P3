@@ -1,0 +1,9 @@
+global using NUnit.Framework;
+global using Domain.Data;
+global using Service.IService;
+global using Presentation.Controllers;
+global using Domain.Models;
+global using Microsoft.AspNetCore.Mvc;
+global using Moq;
+global using Microsoft.EntityFrameworkCore;
+global using FluentAssertions;
