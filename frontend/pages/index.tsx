@@ -1,12 +1,10 @@
 import type { NextPage } from 'next'
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 import charDetailed from "../models/interfaces";
 import CharCard from "../components/CharCard";
-import listOfChars from "../components/CharList";
 import Search from "../components/Search";
-import { Grid, IconButton, Autocomplete, TextField, Box, Typography, createTheme, ThemeProvider } from "@mui/material"
-import SearchIcon from '@mui/icons-material/Search';
+import { Grid, Typography, createTheme, ThemeProvider } from "@mui/material"
 
 const Home: NextPage = () => {
   const [charName, setCharName] = useState<String | null>(null)
@@ -23,6 +21,12 @@ const Home: NextPage = () => {
       },
     },
   });
+
+  const charCardAnim = () => {
+    useEffect(() => {
+      gsap.to('.h1', { x: 250, duration: 5 })
+    }, []);
+  }
 
 
   return (

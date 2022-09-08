@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import charDetailed from '../models/interfaces'
 import { Box, Grid, Rating } from "@mui/material"
 import Card from '@mui/material/Card';
@@ -7,14 +7,26 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CakeIcon from '@mui/icons-material/Cake';
 import Divider from '@mui/material/Divider';
+import { gsap } from "gsap";
 
 export default function charCard(char: charDetailed) {
     const colour = switchColour(char.vision)
     const vision = switchVision(char.vision)
-    return (
-        <React.Fragment>
 
-            <Card sx={{
+    const card = useRef(null);
+    useEffect(() => {
+        gsap.fromTo(card.current, { opacity: 0 }, { duration: 1, opacity: 1, delay: 1 });
+    }, [char.name]);
+
+    const img = useRef(null);
+    useEffect(() => {
+        gsap.fromTo(img.current, { opacity: 0 }, { duration: 1, opacity: 1, delay: 2 });
+    }, [char.image]);
+
+    return (
+        <React.Fragment >
+
+            <Card ref={card} sx={{
                 display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' }, border: 5, borderColor: colour, marginRight: '10px',
                 backgroundImage: {
                     xs: `linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 80%, ${colour} 100%);`,
@@ -27,6 +39,7 @@ export default function charCard(char: charDetailed) {
                         ""
                     ) : (
                         <CardMedia
+                            ref={img}
                             alt={char.name}
                             component='img'
                             height="800rem"

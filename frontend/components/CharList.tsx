@@ -1,8 +1,3 @@
-import React, { useState } from 'react'
-import { Grid, Paper, Container } from "@mui/material"
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-
 const listOfChars = [
     "Albedo", "Aloy", "Amber", "Arataki Itto", "Ayaka", "Barbara", "Beidou", "Bennett", "Chongyun",
     "Diluc", "Diona", "Eula", "Fischl", "Ganyu", "Gorou", "Hu tao", "Jean", "Kaeya", "Kazuha", "Keqing",
