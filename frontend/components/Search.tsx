@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import { gsap } from "gsap";
 import axios from "axios";
 import { Autocomplete, IconButton, TextField, Box } from '@mui/material'
 import listOfChars from "../components/CharList";
@@ -10,6 +11,7 @@ export default function search(props: {
     setCharInfo: React.Dispatch<React.SetStateAction<charDetailed | undefined>>, setCharImg: React.Dispatch<React.SetStateAction<string>>
 }) {
     const GENSHIN_URL = "https://api.genshin.dev/"
+
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', flexDirection: 'row' }}>
@@ -38,10 +40,14 @@ export default function search(props: {
             axios.get(GENSHIN_URL + "characters/" + temp).then((response => {
                 props.setCharInfo(JSON.parse(JSON.stringify(response.data)))
                 console.log(JSON.parse(JSON.stringify(response.data)))
+
+
             })).catch(() => {
                 props.setCharInfo(undefined)
             })
             props.setCharImg(GENSHIN_URL + "characters/" + temp.toLowerCase() + "/gacha-card")
+
         }
+
     }
 }
