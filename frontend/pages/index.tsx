@@ -22,13 +22,6 @@ const Home: NextPage = () => {
     },
   });
 
-  const charCardAnim = () => {
-    useEffect(() => {
-      gsap.to('.h1', { x: 250, duration: 5 })
-    }, []);
-  }
-
-
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>

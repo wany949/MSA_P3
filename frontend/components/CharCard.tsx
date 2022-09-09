@@ -9,7 +9,7 @@ import CakeIcon from '@mui/icons-material/Cake';
 import Divider from '@mui/material/Divider';
 import { gsap } from "gsap";
 
-export default function charCard(char: charDetailed) {
+export default function CharCard(char: charDetailed) {
     const colour = switchColour(char.vision)
     const vision = switchVision(char.vision)
 
